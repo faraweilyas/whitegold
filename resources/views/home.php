@@ -27,10 +27,10 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" target="_blank" href="https://github.com/whytegold/whitegold">Issues</a>
+							<a class="nav-link" target="_blank" href="https://github.com/whytegold/whitegold/issues">Issues</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" target="_blank" href="https://github.com/whytegold/whitegold">Pull Request</a>
+							<a class="nav-link" target="_blank" href="https://github.com/whytegold/whitegold/pulls">Pull Request</a>
 						</li>
 					</ul>
 				</div>
