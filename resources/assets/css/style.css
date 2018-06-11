@@ -1,8 +1,37 @@
 body
 {
-	background: url('http://placehold.it/1920x1080') no-repeat center center fixed;
+	background: linear-gradient(-90deg, #FFBF00, #fbad14);
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	background-size: cover;
 	-o-background-size: cover;
+	color: #FFF;
+}
+
+.whitegold
+{
+	background: linear-gradient(#8e8c8c, #FFF);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.bg-whitegold
+{
+    background-color: #DAA204 !important;
+}
+
+.about-content a
+{
+	text-decoration: none;
+	font-size: 18px;
+	background: linear-gradient(#FFF, #8e8c8c);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.about-content a:hover
+{
+	background: linear-gradient(#8e8c8c, #FFF);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }

@@ -13,7 +13,7 @@
 	</head>
 	<body>
 		<!-- Navigation -->
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-whitegold fixed-bottom">
 			<div class="container">
 				<a class="navbar-brand" target="_blank" href="https://whitegold.com"><?= Detail::appName(); ?></a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBar" aria-controls="navBar" aria-expanded="false" aria-label="Toggle Navigation">
@@ -40,8 +40,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6">
-						<h1 class="mt-5"><?= Detail::appName(); ?></h1>
-						<p><a target="_blank" href="https://whitegold.com"><?= Detail::appName(); ?></a> is a PHP light web application framework with sophisticated syntax and this is inspired by the <a target="_blank" href="https://laravel.com" title="Laravel Framework">Laravel Framework</a> with the aim to ease the way components are being installed alongside our project which disrupts scaling and development process. <a target="_blank" href="https://whitegold.com"><?= Detail::appName(); ?></a> attempts to tackle this by tearing down components to make them stand alone so it's easy to remove, add and update different components at any point in time.</p>
+						<h1 class="mt-5 whitegold"><?= Detail::appName(); ?></h1>
+						<p class="about-content"><a target="_blank" href="https://whitegold.com"><?= Detail::appName(); ?></a> is a PHP light web application framework with sophisticated syntax and this is inspired by the <a target="_blank" href="https://laravel.com" title="Laravel Framework">Laravel Framework</a> with the aim to ease the way components are being installed alongside our project which disrupts scaling and development process. <a target="_blank" href="https://whitegold.com"><?= Detail::appName(); ?></a> attempts to tackle this by tearing down components to make them stand alone so it's easy to remove, add and update different components at any point in time.</p>
 					</div>
 				</div>
 			</div>
