@@ -1,7 +1,7 @@
 {
     "name": "faraweilyas/whitegold",
     "description": "The whiteGold mini PHP framework",
-    "keywords": ["mini", "framework", "library", "project", "whiteGold-framework"],
+    "keywords": ["php", "mini", "framework", "library", "project", "whiteGold-framework"],
     "license": "MIT",
     "homepage": "https://github.com/faraweilyas/whitegold",
     "type": "project",
