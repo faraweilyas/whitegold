@@ -1,8 +1,10 @@
 <?php
 
-	use Blaze\RouterEngine\Router;
+namespace App\Start;
 
-	/**
-	* Route Class
-	*/
-	class Route extends Router {}
+use Blaze\RouterEngine\Router;
+
+/**
+* Route Class
+*/
+class Route extends Router {}

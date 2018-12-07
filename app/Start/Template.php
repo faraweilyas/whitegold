@@ -1,8 +1,10 @@
 <?php
 
-	use Blaze\TemplateEngine\Template as TemplateEngine;
+namespace App\Start;
 
-	/**
-	* Template Class
-	*/
-	class Template extends TemplateEngine {}
+use Blaze\TemplateEngine\Template as TemplateEngine;
+
+/**
+* App\Start Class
+*/
+class Template extends TemplateEngine {}

@@ -1,8 +1,10 @@
 <?php
 
-	use Blaze\Http\Secure;
+namespace App\Start;
 
-	/**
-	* UserSecure Class
-	*/
-	class UserSecure extends Secure {}
+use Blaze\Http\Secure;
+
+/**
+* UserSecure Class
+*/
+class UserSecure extends Secure {}

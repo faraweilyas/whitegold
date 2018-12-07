@@ -1,8 +1,10 @@
 <?php
 
-	use Blaze\TemplateEngine\View as TemplateView;
+namespace App\Start;
 
-	/**
-	* View Class
-	*/
-	class View extends TemplateView {}
+use Blaze\TemplateEngine\View as TemplateView;
+
+/**
+* View Class
+*/
+class View extends TemplateView {}

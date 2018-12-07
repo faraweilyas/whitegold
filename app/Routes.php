@@ -1,9 +1,16 @@
 <?php
 
+use App\Start\View;
+use App\Start\Route;
+use App\Controller\Home\Controller;
+
 /**
 * @routes GENERAL
 */
-Route::register('/', "App\Controller@homePage", "Home Page");
+Route::register('/', function ()
+{
+    Controller::homePage();
+}, "Home Page");
 
 /**
 * @routes MISC
