@@ -25,6 +25,7 @@ defined('STORAGE') 				? NULL : define('STORAGE', 				ROOT."storage".DS);
 defined('CONTROLLER') 			? NULL : define('CONTROLLER', 			APP."Controller".DS);
 defined('START') 				? NULL : define('START', 				APP."Start".DS);
 defined('MODEL') 				? NULL : define('MODEL', 				APP."Model".DS);
+defined('ROUTES') 				? NULL : define('ROUTES', 				APP."Routes".DS);
 
 defined('VIEW') 				? NULL : define('VIEW', 				RESOURCE."views".DS);
 defined('LAYOUT') 				? NULL : define('LAYOUT', 				RESOURCE."layouts".DS);
@@ -55,7 +56,13 @@ require_once CONFIG."Configure.php";
 require_once BOOTSTRAP."Initializers.php";
 
 // INCLUSION OF ROUTES FILE FOR ROUTING THE APP
-require_once APP."Routes.php";
+require_once APP."routes.php";
+
+foreach (getFiles(ROUTES) as $filename):
+    $path = ROUTES.$filename;
+    if (is_file($path) && file_exists($path))
+		require_once $path;
+endforeach;
 
 // INITIALIZE THE ROUTER FOR ROUTES PROCESSING.
 Route::initialize();
