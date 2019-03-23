@@ -33,7 +33,7 @@
     },
     "require": {
         "php": ">=7.0.0",
-        "faraweilyas/whitegold-framework": "^2.3",
+        "faraweilyas/whitegold-framework": "^2.4",
         "vlucas/phpdotenv": "^2.4"
     },
     "require-dev": {
@@ -43,6 +43,8 @@
 		"tests": "phpunit"
 	},
     "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
         "optimize-autoloader": true
     }
 }
