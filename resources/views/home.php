@@ -10,7 +10,7 @@
 	<style type="text/css" media="screen">
 	    body { font: 14px/1.5em "Fira Code"; }
 		.center {
-			background-color: #e8e8e8;
+			background-color: #E5EEFC;
 			width: 100%;
 			height: auto;
 			bottom: 0px;
