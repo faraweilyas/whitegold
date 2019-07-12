@@ -42,7 +42,7 @@ defined('TEMPLATE') 			? NULL : define('TEMPLATE', 			LAYOUT."templates".DS);
 
 defined('LOG') 					? NULL : define('LOG', 					STORAGE."logs".DS);
 defined('UPLOAD') 				? NULL : define('UPLOAD', 				STORAGE."uploads".DS);
-defined('SESSION') 				? NULL : define('SESSION', 				STORAGE."sessions".DS);
+defined('SESSION') 				? NULL : define('SESSION', 				STORAGE."sessions");
 defined('COOKIE') 				? NULL : define('COOKIE', 				STORAGE."cookies".DS);
 
 defined('UPLOAD_IMG') 			? NULL : define('UPLOAD_IMG', 			UPLOAD."images".DS);
@@ -63,7 +63,7 @@ require_once CONFIG."Configure.php";
 require_once BOOTSTRAP."Initializers.php";
 
 // INCLUSION OF ROUTES FILE FOR ROUTING THE APP
-require_once APP."routes.php";
+require_once APP."Routes.php";
 
 foreach (getFiles(ROUTES) as $filename):
     $path = ROUTES.$filename;
