@@ -63,7 +63,7 @@ require_once CONFIG."Configure.php";
 require_once BOOTSTRAP."Initializers.php";
 
 // INCLUSION OF ROUTES FILE FOR ROUTING THE APP
-require_once APP."Routes.php";
+require_once APP."routes.php";
 
 foreach (getFiles(ROUTES) as $filename):
     $path = ROUTES.$filename;

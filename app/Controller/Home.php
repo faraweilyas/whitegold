@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Controller\Home;
+namespace App\Controller;
 
 use App\Start\View;
 
 /**
-* App\Controller\Home Controller Class
+* App\Controller\Home Class
 */
-class Controller
+class Home
 {
 	/**
 	* Handles the home page route.
