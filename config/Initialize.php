@@ -13,7 +13,8 @@ $message = "Invalid deployment state value kindly redefine it to 'production' or
 if (!in_array(DEPLOYMENT_STATE, ['production', 'local'])) exit ($message);
 
 defined('DS')           		? NULL : define('DS',           		"/");
-defined('ROOT')         		? NULL : define('ROOT',         		__DIR__."/../");
+defined('PUBLIC_DIR') 			? NULL : define('PUBLIC_DIR', 			".".DS);
+defined('ROOT')         		? NULL : define('ROOT',         		"..".DS);
 defined('AUTHOR') 				? NULL : define('AUTHOR', 				"iLyas Farawe");
 defined('APP_NAME') 			? NULL : define('APP_NAME',				"whiteGold");
 defined('COMPANY') 				? NULL : define('COMPANY',				"");
@@ -40,21 +41,21 @@ defined('VIEW') 				? NULL : define('VIEW', 				RESOURCE."views".DS);
 defined('LAYOUT') 				? NULL : define('LAYOUT', 				RESOURCE."layouts".DS);
 defined('TEMPLATE') 			? NULL : define('TEMPLATE', 			LAYOUT."templates".DS);
 
-defined('LOG') 					? NULL : define('LOG', 					STORAGE."logs".DS);
-defined('UPLOAD') 				? NULL : define('UPLOAD', 				STORAGE."uploads".DS);
 defined('SESSION') 				? NULL : define('SESSION', 				STORAGE."sessions");
 defined('COOKIE') 				? NULL : define('COOKIE', 				STORAGE."cookies".DS);
+
+defined('ASSETS') 				? NULL : define('ASSETS', 				PUBLIC_DIR."assets".DS);
+defined('LOG') 					? NULL : define('LOG', 					PUBLIC_DIR."logs".DS);
+defined('UPLOAD') 				? NULL : define('UPLOAD', 				PUBLIC_DIR."uploads".DS);
 
 defined('UPLOAD_IMG') 			? NULL : define('UPLOAD_IMG', 			UPLOAD."images".DS);
 defined('UPLOAD_AUDIO') 		? NULL : define('UPLOAD_AUDIO', 		UPLOAD."audio".DS);
 defined('UPLOAD_VID') 			? NULL : define('UPLOAD_VID', 			UPLOAD."videos".DS);
 defined('UPLOAD_FILE') 			? NULL : define('UPLOAD_FILE', 			UPLOAD."files".DS);
 
-defined('PUBLIC_DIR') 			? NULL : define('PUBLIC_DIR', 			ROOT."public".DS);
-defined('ASSET') 				? NULL : define('ASSET', 				PUBLIC_DIR."assets".DS);
-defined('CSS') 					? NULL : define('CSS', 					ASSET."css".DS);
-defined('IMAGE') 				? NULL : define('IMAGE', 				ASSET."images".DS);
-defined('JS') 					? NULL : define('JS', 					ASSET."javascript".DS);
+defined('CSS') 					? NULL : define('CSS', 					ASSETS."css".DS);
+defined('IMAGE') 				? NULL : define('IMAGE', 				ASSETS."images".DS);
+defined('JS') 					? NULL : define('JS', 					ASSETS."javascript".DS);
 
 // LOAD BASIC PHP & APP CONFIGURATIONS.
 require_once CONFIG."Configure.php";
