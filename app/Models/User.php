@@ -24,7 +24,7 @@ class User extends DatabaseObject
 	protected static $databaseFields 	= ['id', 'fullName', 'sex', 'email', 'password', 'lastUpdated', 'lastLogin', 'created'];
 
 	/**
-	* Create New User.
+	* Create new user.
 	* @param \stdClass $userObject
 	* @return bool
 	*/
@@ -42,51 +42,33 @@ class User extends DatabaseObject
 
 	/**
 	* Update user last login date.
-	* @param int $id
 	* @return bool
 	*/
-	public function updateLastLogin (int $id) : bool
+	public function updateLastLogin () : bool
 	{
-		$this->id 			= $id;
-		$this->lastLogin 	= date("Y-m-d H:i:s");
+		$this->lastLogin = date("Y-m-d H:i:s");
 		return $this->save() ? TRUE : FALSE;
 	}
 
 	/**
-	* Change User Password.
-	* @param int $id
+	* Change user password.
 	* @param string $newPassword
 	* @return bool
 	*/
-	public function changeUserPassword (int $id, string $newPassword) : bool
+	public function changeUserPassword (string $newPassword) : bool
 	{
-		$this->id 			= $id;
 		$this->password 	= Encrypt::passwordEncrypt($newPassword);
 		$this->lastUpdated 	= date("Y-m-d H:i:s"); 
 		return $this->save() ? TRUE : FALSE;
 	}
 
 	/**
-	* Check if user exist
-	* @param string $column
-	* @param string $value
-	* @return bool
-	*/
-	public function checkUser (string $column, string $value) : bool
-	{
-		static::$foundObject = static::findByColumn($column, $value);
-		return (static::$foundObject) ? TRUE : FALSE;
-	}
-
-	/**
-	* User login authentication.
+	* Validate user password.
 	* @param string $password
-	* @param \User $foundObject
 	* @return bool
 	*/
-	public static function validateUser (string $password, \User $foundObject) : bool
+	public function validateUser (string $password) : bool
 	{
-		// Check password
-		return (!Encrypt::passwordCheck($password, $foundObject->password)) ? FALSE : TRUE;
+		return (!Encrypt::passwordCheck($password, $this->password)) ? FALSE : TRUE;
 	}
 }
