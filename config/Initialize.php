@@ -66,14 +66,8 @@ require_once CONFIG."Configure.php";
 // REQUIRE INITIALIZERS FILE.
 require_once BOOTSTRAP."Initializers.php";
 
-// INCLUSION OF ROUTES FILE FOR ROUTING THE APP
-require_once APP."routes.php";
-
-foreach (getFiles(ROUTES) as $filename):
-    $path = ROUTES.$filename;
-    if (is_file($path) && file_exists($path))
-		require_once $path;
-endforeach;
+// INCLUSION OF ROUTES FILES FOR ROUTING THE APP
+requireMultipleFiles(array_merge([APP."routes.php"], getFiles(ROUTES, TRUE)));
 
 // INITIALIZE THE ROUTER FOR ROUTES PROCESSING.
 Route::initialize();

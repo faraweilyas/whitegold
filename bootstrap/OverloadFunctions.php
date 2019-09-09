@@ -11,5 +11,5 @@ use Blaze\RouterEngine\Router;
 */
 function __file ($file='', bool $return=TRUE)
 {
-	return Router::_file($file, $return, "preventFileCaching");
+	return Router::_file(preventFileCaching($file), $return);
 }

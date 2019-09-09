@@ -1,7 +1,7 @@
 <?php
 
 use App\Enhancers\Route;
-use App\Controller\Home;
+use App\Controllers\Home;
 
 /**
 * @routes GENERAL

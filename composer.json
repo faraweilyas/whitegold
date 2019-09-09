@@ -33,7 +33,7 @@
     },
     "require": {
         "php": ">=7.0.0",
-        "faraweilyas/whitegold-framework": "^2.4",
+        "faraweilyas/whitegold-framework": "^2.5",
         "vlucas/phpdotenv": "^2.4"
     },
     "require-dev": {
