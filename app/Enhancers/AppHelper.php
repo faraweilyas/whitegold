@@ -1,14 +1,6 @@
 <?php
 
-namespace App\Start;
-
-use Blaze\Auth\Auth;
-use Blaze\Http\Session;
-use Blaze\Encryption\Encrypt;
-use Blaze\Http\Mail as Mailer;
-use Blaze\Logger\Log as FileLog;
-use Blaze\Validation\FormValidator as FV;
-use Blaze\Validation\Validator as Validate;
+namespace App\Enhancers;
 
 /**
 * AppHelper Class
@@ -17,7 +9,7 @@ class AppHelper
 {
 	// Valid Users
 	private static $users = [
-		"FI" => "Farawe iLyas",
+		"IF" => "iLyas Farawe",
 		"JD" => "John Doe",
 	];
 

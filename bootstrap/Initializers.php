@@ -1,9 +1,9 @@
 <?php
 
-use App\Start\Route;
 use Blaze\Http\Secure;
-use App\Start\Template;
 use Blaze\Http\Session;
+use App\Enhancers\Route;
+use App\Enhancers\Template;
 use Blaze\Pagination\Paginate;
 
 $secure 				= new Secure;

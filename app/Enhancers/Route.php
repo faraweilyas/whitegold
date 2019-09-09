@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Start;
+namespace App\Enhancers;
 
 use Blaze\RouterEngine\Router;
 

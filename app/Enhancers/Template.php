@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Start;
+namespace App\Enhancers;
 
 use Blaze\TemplateEngine\Template as TemplateEngine;
 
 /**
-* App\Start Class
+* Template Class
 */
 class Template extends TemplateEngine {}

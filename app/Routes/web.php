@@ -1,7 +1,7 @@
 <?php
 
-use App\Start\View;
-use App\Start\Route;
+use App\Enhancers\View;
+use App\Enhancers\Route;
 
 /**
 * @routes Web

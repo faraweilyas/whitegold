@@ -1,6 +1,6 @@
 <?php
 
-use App\Start\Route;
+use App\Enhancers\Route;
 use App\Controller\Home;
 
 /**

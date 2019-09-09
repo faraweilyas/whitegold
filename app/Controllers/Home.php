@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controllers;
 
-use App\Start\View;
+use App\Enhancers\View;
 
 /**
-* App\Controller\Home Class
+* App\Controllers\Home Class
 */
 class Home
 {

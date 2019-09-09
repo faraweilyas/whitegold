@@ -1,9 +1,6 @@
 <?php
 
-use App\Start\Route;
-
-// REQUIRE COMPOSER AUTOLOAD
-require_once __DIR__.'/../vendor/autoload.php';
+use App\Enhancers\Route;
 
 // SETTING NEEDED CONSTANTS FOR APPLICATION SETUP
 defined('ENV_OVERLOAD') 		? NULL : define('ENV_OVERLOAD', 		FALSE);
@@ -56,6 +53,12 @@ defined('UPLOAD_FILE') 			? NULL : define('UPLOAD_FILE', 			UPLOAD."files".DS);
 defined('CSS') 					? NULL : define('CSS', 					ASSETS."css".DS);
 defined('IMAGE') 				? NULL : define('IMAGE', 				ASSETS."images".DS);
 defined('JS') 					? NULL : define('JS', 					ASSETS."javascript".DS);
+
+// Load functions to override default defined functions.
+require_once BOOTSTRAP."OverloadFunctions.php";
+
+// Require composer autoload
+require_once __DIR__.'/../vendor/autoload.php';
 
 // LOAD BASIC PHP & APP CONFIGURATIONS.
 require_once CONFIG."Configure.php";
