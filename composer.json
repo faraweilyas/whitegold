@@ -34,14 +34,20 @@
     "require": {
         "php": ">=7.0.0",
         "faraweilyas/whitegold-framework": "^2.5",
+        "tamtamchik/simple-flash": "^1.2",
         "vlucas/phpdotenv": "^2.4"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0"
     },
 	"scripts": {
-		"tests": "phpunit"
+		"test": "phpunit",
+	    "spinup": "php -S localhost:8000 -t public/"
 	},
+    "scripts-descriptions": {
+        "test": "Run all phpunit tests!",
+        "spinup": "Spin up cli server to run application"
+    },
     "config": {
         "preferred-install": "dist",
         "sort-packages": true,
