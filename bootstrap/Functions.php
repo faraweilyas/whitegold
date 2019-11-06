@@ -1,42 +1,63 @@
 <?php
 
+use App\Enhancers\Detail;
+use App\Enhancers\FlashTemplate;
+
 /**
-* Authenticate URL parameter by replacing '/' character with '-'
-* @param string $urlParameter
-* @return string
-*/
-function authUrl (string $urlParameter) : string
+ * Wrapper for detail object to be used as a global function.
+ * @return Detail
+ */
+function detail() : Detail
+{
+    return (new Detail);
+}
+
+/**
+ * Display flash message.
+ * @return string
+ */
+function displayFlashMessage() : string
+{
+	return flash()->setTemplate(new FlashTemplate)->display();
+}
+
+/**
+ * Authenticate URL parameter by replacing '/' character with '-'
+ * @param string $urlParameter
+ * @return string
+ */
+function authUrl(string $urlParameter) : string
 {
     return str_replace("/", "-", $urlParameter);
 }
 
 /**
-* Reverse URL parameter by replacing '-' character '/' back to raw value
-* @param string $urlParameter
-* @return string
-*/
-function rawUrl (string $urlParameter) : string
+ * Reverse URL parameter by replacing '-' character '/' back to raw value
+ * @param string $urlParameter
+ * @return string
+ */
+function rawUrl(string $urlParameter) : string
 {
     return str_replace("-", "/", $urlParameter);
 }
 
 /**
-* Replace newline with br tag
-* @param string $text
-* @return string
-*/
-function replaceNl2Br (string $text="") : string
+ * Replace newline with br tag
+ * @param string $text
+ * @return string
+ */
+function replaceNl2Br(string $text="") : string
 {
     return str_replace(["\r\n", "\r", "\n"], '<br />', $text);
 }
 
 /**
-* Formats a given number
-* @param mixed $number
-* @param bool $round
-* @return string
-*/
-function formatNumber ($number, bool $round=FALSE) : string
+ * Formats a given number
+ * @param mixed $number
+ * @param bool $round
+ * @return string
+ */
+function formatNumber($number, bool $round=FALSE) : string
 {
     if (empty($number)) return "";
     if (!$round)
@@ -46,13 +67,13 @@ function formatNumber ($number, bool $round=FALSE) : string
 }
 
 /**
-* Formats a given digit
-* @param mixed $digit
-* @param bool $round
-* @param mixed $prefix
-* @return string
-*/
-function formatDigit ($digit, bool $round=FALSE, $prefix="&#8358;") : string
+ * Formats a given digit
+ * @param mixed $digit
+ * @param bool $round
+ * @param mixed $prefix
+ * @return string
+ */
+function formatDigit($digit, bool $round=FALSE, $prefix="&#8358;") : string
 {
     if (empty($digit)) return "";
     if (!$round)
@@ -62,24 +83,24 @@ function formatDigit ($digit, bool $round=FALSE, $prefix="&#8358;") : string
 }
 
 /**
-* Removes some part of a given string starting from the end
-* @param string $value
-* @param int $length
-* @return string
-*/
-function stripper (string $value, int $length=1) : string
+ * Removes some part of a given string starting from the end
+ * @param string $value
+ * @param int $length
+ * @return string
+ */
+function stripper(string $value, int $length=1) : string
 {
     $valueLength = strlen(trim($value));
     return substr($value, 0, $valueLength - $length);
 }
 
 /**
-* Shortens parsed content and appends "..." at the end of the content indicating it was shortened.
-* @param string $content
-* @param int $fixedLength
-* @return string
-*/
-function shortenContent (string $content, int $fixedLength) : string
+ * Shortens parsed content and appends "..." at the end of the content indicating it was shortened.
+ * @param string $content
+ * @param int $fixedLength
+ * @return string
+ */
+function shortenContent(string $content, int $fixedLength) : string
 {
     $content = trim($content);
     if (strlen($content) < $fixedLength) return $content;
@@ -87,12 +108,12 @@ function shortenContent (string $content, int $fixedLength) : string
 }
 
 /**
-* Remove invalid Characters from given value
-* @param array $invalidChars
-* @param mixed $value
-* @return mixed
-*/
-function removeInvalidChar (array $invalidChars, $value)
+ * Remove invalid Characters from given value
+ * @param array $invalidChars
+ * @param mixed $value
+ * @return mixed
+ */
+function removeInvalidChar(array $invalidChars, $value)
 {
     foreach ($invalidChars as $invalidChar):
         $value = str_replace($invalidChar, "", $value);
