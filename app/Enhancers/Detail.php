@@ -5,51 +5,42 @@ namespace App\Enhancers;
 use Blaze\Details;
 
 /**
-* Detail Class
-*/
+ * Detail Class
+ */
 class Detail extends Details
 {
 	/**
-	* Gets the Page Title.
-	* @return string
-	*/
-	public static function title () : string
-	{
-		return self::$title ?? "Title is not defined";
-	}
-
-	/**
-	* Gets the Page Description.
-	* @return string
-	*/
-	public static function description () : string
-	{
-		return self::$description ?? "Description is not defined";
-	}
-
-	/**
-	* Gets application author if it's defined.
-	* @return string
-	*/
-	public static function author () : string
+	 * Getter for application author.
+	 * @return string
+	 */
+	public function author() : string
 	{
 		return defined('AUTHOR') ? AUTHOR : "Author is not defined";
 	}
 	
 	/**
-	* Gets application name if it's defined.
-	* @return string
-	*/
-	public static function appName () : string
+	 * Getter for application name.
+	 * @return string
+	 */
+	public function appName() : string
 	{
-		return defined('APP_NAME') ? APP_NAME : "App Name is not defined";
+		return defined('APP_NAME') ? APP_NAME : "APP Name is not defined";
 	}
 	
 	/**
-	* Gets company name if it's defined.
-	* @return string
-	*/
-	public static function company () : string
+	 * Getter for short application name.
+	 * @return string
+	 */
+	public function shortAppName() : string
+	{
+		return defined('SHORT_APP_NAME') ? SHORT_APP_NAME : "Short app Name is not defined";
+	}
+	
+	/**
+	 * Getter for company name.
+	 * @return string
+	 */
+	public function company() : string
 	{
 		return defined('COMPANY') ? COMPANY : "Company is not defined";
 	}
