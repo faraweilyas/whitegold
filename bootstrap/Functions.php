@@ -22,6 +22,18 @@ function displayFlashMessage() : string
 }
 
 /**
+ * Display paginated links.
+ * @param string $queryLink
+ * @return string
+ */
+function paginate($queryLink='') : string
+{
+	global $paginate;
+
+	return $paginate->setQueryLink($queryLink)->displayLinks();
+}
+
+/**
  * Authenticate URL parameter by replacing '/' character with '-'
  * @param string $urlParameter
  * @return string
