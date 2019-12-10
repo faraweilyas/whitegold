@@ -9,9 +9,6 @@ defined('ENV_FILE') 			? NULL : define('ENV_FILE', 			"");
 $message = "Invalid deployment state value kindly redefine it to 'production' or 'local'.";
 if (!in_array(DEPLOYMENT_STATE, ['production', 'local'])) exit ($message);
 
-defined('DS')           		? NULL : define('DS',           		"/");
-defined('PUBLIC_DIR') 			? NULL : define('PUBLIC_DIR', 			".".DS);
-defined('ROOT')         		? NULL : define('ROOT',         		"..".DS);
 defined('AUTHOR') 				? NULL : define('AUTHOR', 				"iLyas Farawe");
 defined('APP_NAME') 			? NULL : define('APP_NAME',				"whiteGold");
 defined('COMPANY') 				? NULL : define('COMPANY',				"");
