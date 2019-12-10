@@ -1,6 +1,7 @@
 <?php
 
 use App\Enhancers\Detail;
+use Blaze\Pagination\Paginate;
 use App\Enhancers\FlashTemplate;
 
 /**
@@ -22,15 +23,14 @@ function displayFlashMessage() : string
 }
 
 /**
- * Display paginated links.
- * @param string $queryLink
- * @return string
+ * Wrapper for paginate object to be used as a global function.
+ * @return Blaze\Pagination\Paginate
  */
-function paginate($queryLink='') : string
+function paginate() : Paginate
 {
 	global $paginate;
 
-	return $paginate->setQueryLink($queryLink)->displayLinks();
+	return $paginate;
 }
 
 /**
