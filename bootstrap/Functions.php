@@ -6,11 +6,15 @@ use App\Enhancers\FlashTemplate;
 
 /**
  * Wrapper for detail object to be used as a global function.
+ * @param string $title
+ * @param string $description
  * @return Detail
  */
-function detail() : Detail
+function detail(string $title=NULL, string $description=NULL) : Detail
 {
-    return (new Detail);
+	global $detail;
+
+	return $detail->setPageDetails($title, $description);
 }
 
 /**
@@ -24,13 +28,14 @@ function displayFlashMessage() : string
 
 /**
  * Wrapper for paginate object to be used as a global function.
+ * @param string $searchQLink
  * @return Blaze\Pagination\Paginate
  */
-function paginate() : Paginate
+function paginate(string $searchQLink=NULL) : Paginate
 {
 	global $paginate;
 
-	return $paginate;
+	return $paginate->setQueryLink((string) $searchQLink);
 }
 
 /**
