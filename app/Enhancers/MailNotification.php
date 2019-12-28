@@ -4,12 +4,12 @@ namespace App\Enhancers;
 
 use Blaze\Http\Mail;
 use Blaze\Logger\Log;
-use Blaze\TemplateEngine\Template;
+use Blaze\TemplateEngine\Template as TemplateEngine;
 
 /**
  * MailNotification Class
  */
-class MailNotification extends Template
+class MailNotification extends TemplateEngine
 {
 	/**
      * Get mail template for mail notifications.
