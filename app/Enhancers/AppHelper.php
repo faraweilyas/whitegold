@@ -96,27 +96,31 @@ class AppHelper
 	/**
 	* Generates HTML SELECT button for custom arrays with objects
 	* @param array $array
-	* @param array $objects
-	* @param string $select
+	* @param array $properties
+	* @param array $selecteds
+	* @param string $textStyle
 	* @return string
 	*/
-	public static function generateObjSelect (array $array=[], array $objects=[], string $select=NULL) : string
+	public static function generateObjSelect(array $array=[], array $properties=[], array $selecteds=[], string $textStyle=NULL) : string
 	{
 		$HTMLOutput = '';
-		if (empty($array)) return '';
-		array_walk($array, function ($value, $key) use (&$HTMLOutput, $objects, $select)
+		if (empty($array) || empty($properties)) return '';
+		array_walk($array, function ($object, $key) use (&$HTMLOutput, $properties, $selecteds, $textStyle)
 		{
-			$selectKey 		= $objects[0];
-			$selectKey 		= (property_exists($value, $selectKey)) ? $value->$selectKey : "";
-			$selectValue 	= "";
-			unset($objects[0]);
-			foreach ($objects as $object):
-				if (empty($selectValue))
-					$selectValue = (property_exists($value, $object) && !empty($value->$object)) ? $value->$object : "";
+			$selectValue 	= $properties[0];
+			$selectValue 	= $object->$selectValue ?? "";
+			$selected 	 	= (in_array($selectValue, $selecteds)) ? " selected" : '';
+			$selectText 	= "";
+			// Unset the select value so you can use the properties array dynamically to get the select text
+			unset($properties[0]);
+			foreach ($properties as $property):
+				if (empty($selectText)):
+					$selectText .= !empty($object->$property ?? "") ? "{$object->$property} " : "";
+				endif;
 			endforeach;
-			$selectValue 	= (empty($selectValue)) ? "#NIL" : $selectValue;
-			$selected 	 	= (strtoupper($select) == $selectKey) ? " selected" : "";
-			$HTMLOutput 	.= "<option value='{$selectKey}'$selected>".ucwords($selectValue)."</option>";
+			$selectText	= trim((empty($selectText)) ? "" : $selectText);
+			$selectText	= !empty($textStyle) ? $textStyle($selectText) : $selectText;
+			$HTMLOutput	.= "<option value='{$selectValue}'{$selected}>{$selectText}</option>";
 		});
 		return $HTMLOutput;
 	}
