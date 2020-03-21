@@ -42,7 +42,11 @@
     },
 	"scripts": {
 		"test": "phpunit",
-	    "spinup": "php -S localhost:8000 -t public/"
+	    "spinup": "@php -S localhost:8000 -t public/",
+	    "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
+            "@php -r \"file_exists('config/EnvLoader.php') || copy('config/EnvLoader.php.example', 'config/EnvLoader.php');\""
+        ]
 	},
     "scripts-descriptions": {
         "test": "Run all phpunit tests!",
