@@ -6,9 +6,7 @@ use App\Enhancers\Route;
 defined('ENV_OVERLOAD') 		? NULL : define('ENV_OVERLOAD', 		FALSE);
 defined('ENV_FILE') 			? NULL : define('ENV_FILE', 			"");
 
-$message = "Invalid deployment state value kindly redefine it to 'production' or 'local'.";
-if (!in_array(DEPLOYMENT_STATE, ['production', 'local'])) exit ($message);
-
+// PROFILING
 defined('AUTHOR') 				? NULL : define('AUTHOR', 				"iLyas Farawe");
 defined('APP_NAME') 			? NULL : define('APP_NAME',				"whiteGold");
 defined('COMPANY') 				? NULL : define('COMPANY',				"");
@@ -20,6 +18,7 @@ defined('SESSION_DOMAIN') 		? NULL : define('SESSION_DOMAIN', 		NULL);
 defined('SESSION_SECURE') 		? NULL : define('SESSION_SECURE', 		NULL);
 defined('SESSION_HTTPONLY') 	? NULL : define('SESSION_HTTPONLY', 	NULL);
 
+// DIRECTORIES
 defined('APP') 					? NULL : define('APP', 					ROOT."app".DS);
 defined('BOOTSTRAP') 			? NULL : define('BOOTSTRAP', 			ROOT."bootstrap".DS);
 defined('CONFIG') 				? NULL : define('CONFIG', 				ROOT."config".DS);

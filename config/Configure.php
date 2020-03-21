@@ -19,12 +19,15 @@ else:
 endif;
 
 // LOAD ENVIRONMENT VARIABLES / CONSTANTS.
-require_once CONFIG."Config.php";
+require_once CONFIG."EnvLoader.php";
 
 // VALIDATE THE DEPLOYMENT STATE.
 defined('DEPLOYMENT_STATE') 	? NULL : exit ("Define application deployment state to continue application initialization");
 // VALIDATE THE APP STATE.
 defined('UNDER_CONSTRUCTION') 	? NULL : exit ("Define under construction state to continue application initialization");
+
+if (!in_array(strtolower(DEPLOYMENT_STATE), ['production', 'local']))
+	exit ("Invalid deployment state value kindly redefine it to 'production' or 'local'.");
 
 // CHECK THE VERSION FOR COMPATIBILITY ISSUES
 if (version_compare(PHP_VERSION, "7.0.0", "<")) exit ("This application only runs on PHP Version 7.0.0 or later for compatibility issues.");
