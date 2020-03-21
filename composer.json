@@ -43,14 +43,23 @@
 	"scripts": {
 		"test": "phpunit",
 	    "spinup": "@php -S localhost:8000 -t public/",
-	    "post-root-package-install": [
+	    "post-env-config": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
             "@php -r \"file_exists('config/EnvLoader.php') || copy('config/EnvLoader.php.example', 'config/EnvLoader.php');\""
-        ]
+        ],
+	    "create-log-files": [
+            "@php -r \"file_exists('public/logs/actionLog.txt') || fopen('public/logs/actionLog.txt', 'w');\"",
+            "@php -r \"file_exists('public/logs/errorLog.txt') || fopen('public/logs/errorLog.txt', 'w');\"",
+            "@php -r \"file_exists('public/logs/DBLog.txt') || fopen('public/logs/DBLog.txt', 'w');\"",
+            "@php -r \"file_exists('public/logs/mailErrorLog.txt') || fopen('public/logs/mailErrorLog.txt', 'w');\"",
+            "@php -r \"file_exists('public/logs/mailLog.txt') || fopen('public/logs/mailLog.txt', 'w');\""
+        ],
+	    "post-root-package-install": ["@post-env-config", "@create-log-files"]
 	},
     "scripts-descriptions": {
         "test": "Run all phpunit tests!",
-        "spinup": "Spin up cli server to run application"
+        "spinup": "Spin up cli server to run application",
+        "create-log-files": "Create log files"
     },
     "config": {
         "preferred-install": "dist",
