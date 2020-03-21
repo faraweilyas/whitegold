@@ -1,5 +1,7 @@
 composer.lock
 .DS_Store
 .idea
+.env
+config/EnvLoader.php
 .phpintel/
 vendor/
