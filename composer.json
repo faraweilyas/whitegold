@@ -54,7 +54,8 @@
             "@php -r \"file_exists('public/logs/mailErrorLog.txt') || fopen('public/logs/mailErrorLog.txt', 'w');\"",
             "@php -r \"file_exists('public/logs/mailLog.txt') || fopen('public/logs/mailLog.txt', 'w');\""
         ],
-	    "post-tasks": ["@copy-env-config", "@create-log-files"]
+	    "post-tasks": ["@copy-env-config", "@create-log-files"],
+        "post-root-package-install": ["@post-tasks"]
 	},
     "scripts-descriptions": {
         "test": "Run all phpunit tests!",
