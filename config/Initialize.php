@@ -7,7 +7,7 @@ defined('ENV_OVERLOAD') 		? NULL : define('ENV_OVERLOAD', 		FALSE);
 defined('ENV_FILE') 			? NULL : define('ENV_FILE', 			"");
 
 // PROFILING
-defined('AUTHOR') 				? NULL : define('AUTHOR', 				"iLyas Farawe");
+defined('AUTHORS') 				? NULL : define('AUTHORS', 				["iLyas Farawe"]);
 defined('APP_NAME') 			? NULL : define('APP_NAME',				"whiteGold");
 defined('COMPANY') 				? NULL : define('COMPANY',				"");
 
