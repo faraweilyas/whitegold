@@ -15,7 +15,11 @@ class Detail extends Details
 	 */
 	public function author() : string
 	{
-		return defined('AUTHOR') ? AUTHOR : "Author is not defined";
+		if (defined('AUTHORS')):
+			return is_array(AUTHORS) ? implode(", ", AUTHORS) : AUTHORS;
+		else:
+			return "Author is not defined";
+		endif;
 	}
 	
 	/**
