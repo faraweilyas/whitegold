@@ -4,8 +4,8 @@ use App\Enhancers\Route;
 use App\Controllers\Home;
 
 /**
-* @routes GENERAL
-*/
+ * @routes GENERAL
+ */
 Route::register('/', function ()
 {
 	Home::homePage();

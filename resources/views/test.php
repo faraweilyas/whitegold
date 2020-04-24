@@ -3,7 +3,7 @@
 use Blaze\File\File;
 
 print "<pre>";
-print '<p><a href="'.__url("./", TRUE).'">Home</a></p>';
+print '<p><a href="'.__url("./").'">Home</a></p>';
 print "<p>Welcome Guest \u{1F60D}</p>";
 print "<p>Write your test code here:</p>";
 
