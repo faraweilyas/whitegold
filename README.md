@@ -4,6 +4,7 @@
 [![Total Downloads](https://poser.pugx.org/faraweilyas/whitegold/downloads)](https://packagist.org/packages/faraweilyas/whitegold)
 [![License](https://poser.pugx.org/faraweilyas/whitegold/license)](https://packagist.org/packages/faraweilyas/whitegold)
 [![Coverage Status](https://coveralls.io/repos/github/faraweilyas/whitegold/badge.svg?branch=master)](https://coveralls.io/github/faraweilyas/whitegold?branch=master)
+[![Build Status](https://travis-ci.org/faraweilyas/whitegold.svg?branch=master)](https://travis-ci.org/faraweilyas/whitegold)
 
 whiteGold is a PHP light web application framework with sophisticated syntax and this is inspired by the [Laravel Framework](https://laravel.com) with the aim to ease the way components are being installed alongside our project which disrupts scaling and development process. whiteGold attempts to tackle this by tearing down components to make them stand alone so it's easy to remove, add and update different components at any point in time.
 
