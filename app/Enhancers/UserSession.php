@@ -5,6 +5,6 @@ namespace App\Enhancers;
 use Blaze\Http\Session;
 
 /**
-* UserSession Class
-*/
+ * UserSession Class
+ */
 class UserSession extends Session {}

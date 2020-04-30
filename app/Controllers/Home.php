@@ -5,14 +5,14 @@ namespace App\Controllers;
 use App\Enhancers\View;
 
 /**
-* App\Controllers\Home Class
-*/
+ * App\Controllers\Home Class
+ */
 class Home
 {
 	/**
-	* Handles the home page route.
-	* @return void
-	*/
+	 * Handles the home page route.
+	 * @return void
+	 */
 	public static function homePage()
 	{
     	$title          = APP_NAME;

@@ -5,6 +5,6 @@ namespace App\Enhancers;
 use Blaze\RouterEngine\Router;
 
 /**
-* Route Class
-*/
+ * Route Class
+ */
 class Route extends Router {}

@@ -3,35 +3,38 @@
 namespace App\Enhancers;
 
 /**
-* AppHelper Class
-*/
+ * AppHelper Class
+ */
 class AppHelper
 {
-	// Valid Users
+	/**
+	 * Valid Users
+	 * @var array users
+	 */
 	private static $users = [
 		"IF" => "iLyas Farawe",
 		"JD" => "John Doe",
 	];
 
 	/**
-	* Validates array key
-	* @param string $array
-	* @param string $arrayKey
-	* @return bool
-	*/
-	public static function validateArrayKey (string $array=NULL, string $arrayKey=NULL) : bool
+	 * Validates array key
+	 * @param string $array
+	 * @param string $arrayKey
+	 * @return bool
+	 */
+	public static function validateArrayKey(string $array=NULL, string $arrayKey=NULL) : bool
 	{
 		if (!isset(static::$$array)) return FALSE;
 		return array_key_exists(strtoupper($arrayKey), static::$$array);
 	}
 
 	/**
-	* Validates and returns array
-	* @param string $array
-	* @param string $textStyle
-	* @return array
-	*/
-	public static function getArray (string $array=NULL, string $textStyle="strtoupper") : array
+	 * Validates and returns array
+	 * @param string $array
+	 * @param string $textStyle
+	 * @return array
+	 */
+	public static function getArray(string $array=NULL, string $textStyle="strtoupper") : array
 	{
 		if (!isset(static::$$array)) return [];
 		foreach (static::$$array as &$arrayValue):
@@ -41,13 +44,13 @@ class AppHelper
 	}
 
 	/**
-	* Validates and returns array value
-	* @param string $array
-	* @param string $arrayKey
-	* @param string $textStyle
-	* @return string
-	*/
-	public static function getArrayValue (string $array=NULL, string $arrayKey=NULL, string $textStyle="strtoupper") : string
+	 * Validates and returns array value
+	 * @param string $array
+	 * @param string $arrayKey
+	 * @param string $textStyle
+	 * @return string
+	 */
+	public static function getArrayValue(string $array=NULL, string $arrayKey=NULL, string $textStyle="strtoupper") : string
 	{
 		if (!isset(static::$$array)) return '';
 		if (empty($arrayKey)) return '';
@@ -58,12 +61,12 @@ class AppHelper
 	}
 
 	/**
-	* Generates HTML SELECT button
-	* @param string $array
-	* @param string $select
-	* @return string
-	*/
-	public static function generateSelect (string $array=NULL, string $select=NULL) : string
+	 * Generates HTML SELECT button
+	 * @param string $array
+	 * @param string $select
+	 * @return string
+	 */
+	public static function generateSelect(string $array=NULL, string $select=NULL) : string
 	{
 		$HTMLOutput = '';
 		if (!isset(static::$$array)) return '';
@@ -76,12 +79,12 @@ class AppHelper
 	}
 
 	/**
-	* Generates HTML SELECT button for user defined array
-	* @param array $array
-	* @param array $selecteds
-	* @return string
-	*/
-	public static function generateUDASelect (array $array=[], array $selecteds=[]) : string
+	 * Generates HTML SELECT button for user defined array
+	 * @param array $array
+	 * @param array $selecteds
+	 * @return string
+	 */
+	public static function generateUDASelec(array $array=[], array $selecteds=[]) : string
 	{
 		$HTMLOutput = '';
 		if (empty($array)) return '';
@@ -94,13 +97,13 @@ class AppHelper
 	}
 
 	/**
-	* Generates HTML SELECT button for custom arrays with objects
-	* @param array $array
-	* @param array $properties
-	* @param array $selecteds
-	* @param string $textStyle
-	* @return string
-	*/
+	 * Generates HTML SELECT button for custom arrays with objects
+	 * @param array $array
+	 * @param array $properties
+	 * @param array $selecteds
+	 * @param string $textStyle
+	 * @return string
+	 */
 	public static function generateObjSelect(array $array=[], array $properties=[], array $selecteds=[], string $textStyle=NULL) : string
 	{
 		$HTMLOutput = '';
@@ -126,12 +129,12 @@ class AppHelper
 	}
 
 	/**
-	* Generates HTML RADIO button
-	* @param string $array
-	* @param string $select
-	* @return string
-	*/
-	public static function generateRadio (string $array=NULL, string $select=NULL, bool $isRequired=TRUE) : string
+	 * Generates HTML RADIO button
+	 * @param string $array
+	 * @param string $select
+	 * @return string
+	 */
+	public static function generateRadio(string $array=NULL, string $select=NULL, bool $isRequired=TRUE) : string
 	{
 		$HTMLOutput = '';
 		$id 		= 1;

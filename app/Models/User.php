@@ -7,8 +7,8 @@ use Blaze\Encryption\Encrypt;
 use Blaze\Database\DatabaseObject;
 
 /**
-* User Model Class
-*/
+ * User Model Class
+ */
 class User extends DatabaseObject
 {
 	/**
@@ -77,7 +77,7 @@ class User extends DatabaseObject
 	 * @param int $page
 	 * @param int $limit
 	 * @param string $order
-	 * @return bool
+	 * @return mixed
 	 */
 	public static function getUsers(int $page=1, int $limit=5, string $order="DESC")
 	{

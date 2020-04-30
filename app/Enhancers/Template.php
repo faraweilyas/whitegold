@@ -5,6 +5,6 @@ namespace App\Enhancers;
 use Blaze\TemplateEngine\Template as TemplateEngine;
 
 /**
-* Template Class
-*/
+ * Template Class
+ */
 class Template extends TemplateEngine {}

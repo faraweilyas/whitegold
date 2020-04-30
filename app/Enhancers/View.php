@@ -5,6 +5,6 @@ namespace App\Enhancers;
 use Blaze\TemplateEngine\View as TemplateView;
 
 /**
-* View Class
-*/
+ * View Class
+ */
 class View extends TemplateView {}

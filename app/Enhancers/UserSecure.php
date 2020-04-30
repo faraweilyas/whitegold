@@ -5,6 +5,6 @@ namespace App\Enhancers;
 use Blaze\Http\Secure;
 
 /**
-* UserSecure Class
-*/
+ * UserSecure Class
+ */
 class UserSecure extends Secure {}
