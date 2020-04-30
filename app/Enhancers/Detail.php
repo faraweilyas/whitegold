@@ -32,15 +32,6 @@ class Detail extends Details
 	}
 	
 	/**
-	 * Getter for short application name.
-	 * @return string
-	 */
-	public function shortAppName() : string
-	{
-		return defined('SHORT_APP_NAME') ? SHORT_APP_NAME : "Short app Name is not defined";
-	}
-	
-	/**
 	 * Getter for company name.
 	 * @return string
 	 */
