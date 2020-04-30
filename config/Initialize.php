@@ -25,9 +25,9 @@ defined('CONFIG') 				? NULL : define('CONFIG', 				ROOT."config".DS);
 defined('RESOURCE') 			? NULL : define('RESOURCE', 			ROOT."resources".DS);
 defined('STORAGE') 				? NULL : define('STORAGE', 				ROOT."storage".DS);
 
-defined('CONTROLLER') 			? NULL : define('CONTROLLER', 			APP."Controller".DS);
-defined('START') 				? NULL : define('START', 				APP."Start".DS);
-defined('MODEL') 				? NULL : define('MODEL', 				APP."Model".DS);
+defined('CONTROLLERS') 			? NULL : define('CONTROLLERS', 			APP."Controllers".DS);
+defined('ENHANCERS') 			? NULL : define('ENHANCERS', 			APP."Enhancers".DS);
+defined('MODELS') 				? NULL : define('MODELS', 				APP."Models".DS);
 defined('ROUTES') 				? NULL : define('ROUTES', 				APP."Routes".DS);
 
 defined('VIEW') 				? NULL : define('VIEW', 				RESOURCE."views".DS);
