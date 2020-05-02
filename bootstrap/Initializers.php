@@ -19,4 +19,4 @@ $session 				= new Session(
 );
 $template 				= new Template;
 $paginate 				= (new Paginate)->setTemplate(new BootstrapTemplate);
-$routeState 			= Route::activateAbsoluteRoute();
+$routeState 			= Route::activateRelativeRoute();
