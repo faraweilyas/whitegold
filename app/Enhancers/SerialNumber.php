@@ -8,21 +8,26 @@ namespace App\Enhancers;
 class SerialNumber
 {
 	/**
-	 * Generates serial number with ID and length 13
-	 * @param string $ID
+	 * Generate serial number with length 13
+	 * @param callable $callable
+	 * @param string $preText
+	 * @param string $postText
 	 * @return string
 	 */
-	public static function generate(string $ID=NULL) : string
+	public static function generate(callable $callable, string $preText=NULL, string $postText=NULL) : string
 	{
-		return strtoupper($ID.uniqid());
+		return strtoupper($preText.$callable(uniqid()).$postText);
 	}
 
 	/**
 	 * Generate serial number
 	 * @return string
 	 */
-	public static function generateSerialNumber () : string
+	public static function generateSerialNumber() : string
 	{
-		return strtoupper("CHCO".substr(uniqid(), 7, 13)."SN");
+		return static::generate(function($serialNumber)
+		{
+			return substr($serialNumber, 7, 13);
+		}, "ILY", "SN");
 	}
 }
